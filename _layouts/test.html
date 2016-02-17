@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- ----------------------------------------------------------------------------
+Thanks go to the authors of Bootstrap for both the library and the original
+template that this site was written from. You made this much more enjoyable than
+it could have been.
+                                      Visit  http://twitter.github.com/bootstrap/
+----------------------------------------------------------------------------- -->
+  <head>
+    <meta charset="utf-8">
+    <title>{{</title>
+    <meta name="author" content="Bob Adolf">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Static CSS version of Bootstrap -->
+    <link href="http://rdadolf.com/style/bootstrap.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+    <!-- Custom styles on top of (and/or in place of) bootstrap -->
+    <link rel="stylesheet" href="http://rdadolf.com/style/extras.css">
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-29492860-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Me! -->
+      <h1>Two Crocodiles</h1>
+      <h3>
+      <div class="vspace"></div>
+
+      <!-- Static Navigation Bar -->
+      <div class="navbar">
+        <div class="navbar-inner">
+          <div class="container">
+            <ul class="nav">
+              <li class="active"><a href="http://rdadolf.com/">About Me</a></li>
+              <li><a href="http://rdadolf.com/research.html#">Research</a></li>
+              <li><a href="http://rdadolf.com/recreation.html#">Recreation</a></li>
+              <li><a href="http://rdadolf.com/contact_me.html#">Contact Me</a></li>
+              <li><a href="{{site:baseurl}}/">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span9 ">
+          <h2>{{ page.title }}</h2>
+
+          {{ page.content }}
+
+        </div>
+
+        <div class="span3 ">
+        {% for post in site.posts %}
+        <p><a href="{{ post.url }}">{{ post.title }}</a></p>
+        {% endfor %}
+      </div>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
+
